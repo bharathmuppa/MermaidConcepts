@@ -49,3 +49,24 @@ D -- 17. SAML Logout Request --> B;
 B -- 18. SAML Logout Response --> D;
 
 ```
+
+
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant IdentityProvider as IdP
+    participant ServiceProvider as SP
+    participant ResourceServer as RS
+
+    User->>SP: Access Request
+    SP-->>User: Login Redirect
+    User->>IdP: Authentication Request
+    IdP-->>User: Login Form
+    User->>IdP: Credentials
+    IdP->>User: SAML Response
+    User->>SP: SAML Assertion
+    SP->>RS: Resource Request
+    RS-->>SP: Resource Response
+    SP-->>User: Access Granted
+```
