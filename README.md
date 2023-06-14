@@ -2,6 +2,14 @@
 
 
 ```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+```mermaid
 graph LR
 
 subgraph User
@@ -49,4 +57,5 @@ UA -- SAML Logout Request --> IdP
 IdP -- SAML Logout Response --> UA
 
 style subgraph fill:#eee, stroke:#333, stroke-width:2px
+
 ```
